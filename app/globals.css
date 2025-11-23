@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f4f8fc 0%, #ffffff 60%, #e8f2ff 100%);
+  color: #0f172a;
+}
+
+.glass-panel {
+  @apply backdrop-blur-md bg-white/70 border border-white/60 shadow-glow;
+}
+
+.cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.cta-button:hover::after,
+.cta-button:focus-visible::after {
+  transform: translateX(0);
+}
